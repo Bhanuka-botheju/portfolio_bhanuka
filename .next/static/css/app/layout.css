@@ -700,6 +700,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .text-gray-300 {
+    color: var(--color-gray-300);
+  }
   .text-gray-500 {
     color: var(--color-gray-500);
   }
