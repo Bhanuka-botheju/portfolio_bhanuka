@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const theme = "dark"; // just placeholder – hook this up to a real theme system
-
+  const {theme,toggletheme} = useTheme();
   const toggleMobileMenu = () => {
     setIsMobileOpen(!isMobileOpen);
   };
@@ -46,6 +46,7 @@ export default function Navbar() {
 
           {/* Theme Toggle */}
           <button
+            onClick={toggletheme}
             className="p-2 rounded-full bg-white/80 dark:bg-zinc-900/80 shadow-md hover:shadow-lg backdrop-blur-md transition-all duration-300 text-yellow-500 dark:text-blue-400 hover:scale-105"
             aria-label="Toggle Theme"
           >

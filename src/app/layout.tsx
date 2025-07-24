@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/app/component/navbar"; 
+import { ThemeProvider } from "./context/ThemeContext";
 
 
 const geistSans = Geist({
@@ -27,13 +28,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white transition-colors dark:bg-gray-900 dark:test-white`}
       >
-        <Navbar/>
-        <div className=""> {/* Add padding to avoid navbar overlap */}
-          {children}
-        </div>
-        <footer>fotter</footer>
+        <ThemeProvider>
+          <Navbar/>
+            {children}
+          <footer>fotter</footer>
+        </ThemeProvider>
       </body>
     </html>
   );
