@@ -9,8 +9,7 @@ export interface Project {
 
 export interface Blog {
     title: string,
-    excerpt: string,
+    lesson: string,
     date: string,
-    readTime: string,
-    slug: string,
+    time: string
 }

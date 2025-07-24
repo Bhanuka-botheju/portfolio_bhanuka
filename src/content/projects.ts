@@ -48,21 +48,5 @@ export const projects : Project[]= [
         githubLink: 'https://github.com',
         demoLink: 'https://demo.com',
         image: '/projects/chat-app.png',
-      },
-      {
-        title: 'Recipe Finder',
-        description: 'A recipe search application using the Edamam API.',
-        technologies: ['React', 'Edamam API'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/recipe-finder.png',
-      },
-      {
-        title: 'Expense Tracker',
-        description: 'A personal finance tracker to manage expenses and income.',
-        technologies: ['React', 'Firebase'],
-        githubLink: 'https://github.com',
-        demoLink: 'https://demo.com',
-        image: '/projects/expense-tracker.webp',
       }
   ];

@@ -6,52 +6,56 @@ import { PhoneIcon, EnvelopeIcon, LinkIcon } from '@heroicons/react/24/outline';
 
 export default function Personbio() {
   return (
-    <section className="py-28 container max-w-7xl mx-auto px-4">
-      <div className="max-w-3xl mx-auto text-center">
-        <div className="flex flex-col items-center mb-4">
+    <section className="py-28 bg-gray-50 dark:bg-gray-900">
+      <div className="container max-w-5xl mx-auto px-4">
+        <div className="flex flex-col items-center text-center">
           <Image
             src="/bhanuka.jpeg"
             alt="profile"
-            width={140}
-            height={140}
-            className="rounded-full w-36 h-36 object-cover ring-2 ring-primary mb-4"
+            width={160}
+            height={160}
+            className="rounded-full object-cover ring-4 ring-primary shadow-md mb-6 w-40 h-40"
           />
-        </div>
 
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-600 dark:text-gray-300 ">
-          Hi, I'm <span className="text-primary">Bhanuka Botheju</span>
-        </h1>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-800 dark:text-white mb-4">
+            Hi, I'm <span className="text-primary">Bhanuka Botheju</span>
+          </h1>
 
-        <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-          MACHINE LEARNING ENTHUSIAST
-        </p>
-    </div>
-    <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-8 text-gray-700 dark:text-gray-300 text-sm md:text-lg mt-8 overflow-x-auto">
-        {/* Phone */}
-        <div className="flex items-center gap-2 whitespace-nowrap ">
-            <PhoneIcon className="h-5 w-5 text-primary hover:scale-130 transition-transform duration-800" />
-            <span>+94 766 420 749</span>
-        </div>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 font-medium">
+            MACHINE LEARNING ENTHUSIAST
+          </p>
 
-        {/* Email */}
-        <div className="flex items-center gap-2 whitespace-nowrap">
-            <EnvelopeIcon className="h-5 w-5 text-primary hover:scale-130 transition-transform duration-800" />
-            <span>bhanukabothejuofficial@gmail.com</span>
-        </div>
+          {/* Contact Info */}
+          <div className="flex flex-wrap justify-center items-center gap-6 text-gray-700 dark:text-gray-300 text-sm md:text-lg">
+            {/* Phone */}
+            <div className="flex items-center gap-2 group">
+              <PhoneIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <span className="group-hover:text-primary transition-colors duration-200">+94 766 420 749</span>
+            </div>
 
-        {/* GitHub */}
-        <div className="flex items-center gap-2 whitespace-nowrap">
-            <LinkIcon className="h-5 w-5 text-primary hover:scale-130 transition-transform duration-800" />
-            <a
-            href="https://github.com/bhanuka-botheju"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-            >
-            github.com/bhanuka-botheju
-            </a>
+            {/* Email */}
+            <div className="flex items-center gap-2 group">
+              <EnvelopeIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <span className="group-hover:text-primary transition-colors duration-200">
+                bhanukabothejuofficial@gmail.com
+              </span>
+            </div>
+
+            {/* GitHub */}
+            <div className="flex items-center gap-2 group">
+              <LinkIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <a
+                href="https://github.com/bhanuka-botheju"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline group-hover:text-primary transition-colors duration-200"
+              >
+                github.com/bhanuka-botheju
+              </a>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </section>
   );
 }
