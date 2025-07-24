@@ -30,7 +30,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar/>
-        {children}
+        <div className=""> {/* Add padding to avoid navbar overlap */}
+          {children}
+        </div>
         <footer>fotter</footer>
       </body>
     </html>

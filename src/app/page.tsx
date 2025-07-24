@@ -1,5 +1,5 @@
 export default function Home() {
   return (
-    <div> Hii Bhanuka !!</div>
+    <div className="text-primary"> Hii Bhanuka !!</div>
   );
 }
