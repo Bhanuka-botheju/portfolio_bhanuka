@@ -26,7 +26,7 @@ export default function Classes() {
             <p className="text-gray-600 dark:text-gray-300 text-sm">
               {cls.lesson}
             </p>
-            <div className='flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4'>
+            <div className='flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4 mt-1'>
                 <span className='flex items-center'>
                     <FaCalendarAlt className='mr-2'/>
                     {cls.date}
