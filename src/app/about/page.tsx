@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import { FaCapsules, FaCode, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
+import { FaCode, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
 
 export default function AboutPage() {
   return (
-    <div className="container max-w-7xl mx-auto py-20 text-gray-600 dark:text-gray-300 px-4">
+    <div className="container max-w-7xl mx-auto py-20 px-4 text-gray-600 dark:text-gray-300">
       {/* Heading */}
       <h1 className="text-4xl font-bold mb-8 text-center text-gray-800 dark:text-white">
         About Me
@@ -15,8 +15,8 @@ export default function AboutPage() {
       <section>
         <p className="text-lg max-w-3xl mx-auto text-center text-gray-700 dark:text-gray-300 leading-relaxed">
           I'm a Computer Science and Engineering undergraduate at the University of Moratuwa, 
-          currently specializing in Data Science. I’m passionate about solving real-world problems through data 
-          and actively seeking a Data Science internship opportunity.
+          currently specializing in Data Science. I'm passionate about solving real-world problems through data 
+          and currently seeking a Data Science internship opportunity to apply and grow my skills.
         </p>
       </section>
 
@@ -46,7 +46,7 @@ export default function AboutPage() {
             <ul className="list-disc list-inside space-y-1 text-sm">
               <li>Spring Boot</li>
               <li>FastAPI</li>
-              <li>MySQL , MongoDB</li>
+              <li>MySQL / MongoDB</li>
               <li>Dart</li>
             </ul>
           </div>
@@ -60,6 +60,27 @@ export default function AboutPage() {
               <li>ClickUp</li>
               <li>MATLAB</li>
               <li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section className="mt-20">
+        <h2 className="text-2xl font-semibold text-center mb-10 text-gray-800 dark:text-white">
+          Experience
+        </h2>
+
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="bg-white/60 dark:bg-dark/40 backdrop-blur-md p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+            <h3 className="text-xl font-semibold mb-1">Instructor Member</h3>
+            <p className="text-primary text-sm mb-3">
+              Syzygy Higher Education · July 2022 – November 2022
+            </p>
+            <ul className="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <li>Assisted in conducting academic sessions and workshops.</li>
+              <li>Gained hands-on experience in teaching and mentoring.</li>
+              <li>Recognized for strong communication and leadership skills.</li>
             </ul>
           </div>
         </div>
