@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { PhoneIcon, EnvelopeIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { FaEnvelope, FaGithub, FaPhone } from 'react-icons/fa';
 
 export default function Personbio() {
   return (
@@ -29,13 +29,13 @@ export default function Personbio() {
           <div className="flex flex-wrap justify-center items-center gap-6 text-gray-700 dark:text-gray-300 text-sm md:text-lg">
             {/* Phone */}
             <div className="flex items-center gap-2 group">
-              <PhoneIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <FaPhone className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
               <span className="group-hover:text-primary transition-colors duration-200">+94 766 420 749</span>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-2 group">
-              <EnvelopeIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <FaEnvelope className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
               <span className="group-hover:text-primary transition-colors duration-200">
                 bhanukabothejuofficial@gmail.com
               </span>
@@ -43,7 +43,7 @@ export default function Personbio() {
 
             {/* GitHub */}
             <div className="flex items-center gap-2 group">
-              <LinkIcon className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
+              <FaGithub className="h-5 w-5 text-primary group-hover:scale-125 transition-transform duration-200" />
               <a
                 href="https://github.com/bhanuka-botheju"
                 target="_blank"
