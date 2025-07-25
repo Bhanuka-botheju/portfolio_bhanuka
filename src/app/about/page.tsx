@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { FaCode, FaGraduationCap, FaLaptopCode } from 'react-icons/fa';
+import Contact from '../contact/Contact';
 
 export default function AboutPage() {
   return (
@@ -85,6 +86,29 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="mt-20">
+        <h2 className="text-2xl font-semibold text-center mb-10 text-gray-800 dark:text-white">
+          Education
+        </h2>
+
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="bg-white/60 dark:bg-dark/40 backdrop-blur-md p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300">
+            
+            <h3 className="text-xl font-semibold mb-1">Bsc(Hons) Engineering in University Of Moratuwa</h3>
+            <p className="text-primary text-sm mb-3">
+              2022 May - present
+            </p>
+
+            <h3 className="text-xl font-semibold mb-1">GCE A/l & O/L in St. Joseph's College </h3>
+            <p className="text-primary text-sm mb-3">
+              2007 July  - 2022 November
+            </p>
+
+          </div>
+        </div>
+      </section>
+      <Contact/>
     </div>
   );
 }

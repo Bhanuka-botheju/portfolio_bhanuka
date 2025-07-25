@@ -7,7 +7,7 @@ import { FaCalendarAlt, FaClock } from 'react-icons/fa';
 
 export default function Classes() {
   return (
-    <section className="py-20 container max-w-7xl mx-auto px-4">
+    <section id='physicsclass'  className="py-20 container max-w-7xl mx-auto px-4">
       <h2 className="text-3xl font-bold mb-12 text-center text-gray-800 dark:text-white">
         Advanced Level Physics
       </h2>

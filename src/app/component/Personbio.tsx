@@ -6,7 +6,7 @@ import { FaEnvelope, FaGithub, FaPhone } from 'react-icons/fa';
 
 export default function Personbio() {
   return (
-    <section className="py-28 bg-gray-50 dark:bg-gray-900">
+    <section id='personbio' className="py-28 bg-gray-50 dark:bg-gray-900">
       <div className="container max-w-5xl mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           <Image

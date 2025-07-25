@@ -13,9 +13,9 @@ export default function Navbar() {
   };
 
   const menuList = [
-    { href: "/", label: "Home" },
-    { href: "/project", label: "Project" },
-    { href: "/classes", label: "Classes" },
+    { href: "#personbio",scroll: false, label: "Home" },
+    { href: "#featureproject",scroll: false, label: "Project" },
+    { href: "#physicsclass", scroll: false, label: "Classes" },
     { href: "/about", label: "About" },
   ];
 
