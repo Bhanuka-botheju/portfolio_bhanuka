@@ -11,5 +11,6 @@ export interface Blog {
     title: string,
     lesson: string,
     date: string,
-    time: string
+    time: string,
+    comment: string,
 }
