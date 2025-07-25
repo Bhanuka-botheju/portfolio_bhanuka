@@ -35,74 +35,98 @@ export default function Contact() {
     e.preventDefault()
     setStatus('loading')
 
-    // Simulate API call (replace with your backend logic)
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000))
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
+      setTimeout(() => setStatus('idle'), 4000) // Reset after 4s
     } catch (error) {
       setStatus('error')
+      setTimeout(() => setStatus('idle'), 4000) // Reset after 4s
     }
   }
 
   return (
-    <div className="container max-w-5xl mx-auto py-20 px-4">
-      <h1 className="text-4xl font-bold mb-16 text-center">Contact Me</h1>
+    <div className="min-h-screen bg-gray-50 py-20 px-6 md:px-12">
+      <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-12">
+        <h1 className="text-4xl font-extrabold mb-12 text-center text-gray-900 tracking-tight">
+          Contact Me
+        </h1>
 
-      <div className="space-y-8">
-        <h2 className="text-2xl font-semibold">Get in Touch</h2>
-        <p className="text-gray-600 dark:text-gray-300 md:w-2/3">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-        </p>
+        <div className="space-y-10">
+          <section>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Get in Touch</h2>
+            <p className="text-gray-700 leading-relaxed">
+              I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+            </p>
+          </section>
 
-        {/* Contact Info */}
-        <div className="space-y-4">
-          <ContactInfo icon={<FaEnvelope className="text-primary" />} label="Email" value="bhanukabothejuofficial@gmail.com" link="mailto:bhanukabothejuofficial@gmail.com" />
-          <ContactInfo icon={<FaPhone className="text-primary" />} label="Phone" value="+94 766420749" link="tel:+94766420749" />
-          <ContactInfo icon={<FaMapMarkerAlt className="text-primary" />} label="Address" value="574, Enderamulla, Wattala" />
-        </div>
-
-        {/* Contact Form */}
-        <div className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md">
-          <form className="space-y-6" onSubmit={handleSubmit}>
-            <FormField
-              label="Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <FormField
+          {/* Contact Info */}
+          <section className="space-y-6">
+            <ContactInfo
+              icon={<FaEnvelope className="text-blue-600" />}
               label="Email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              type="email"
-              required
+              value="bhanukabothejuofficial@gmail.com"
+              link="mailto:bhanukabothejuofficial@gmail.com"
             />
-            <FormField
-              label="Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              textarea
-              rows={4}
-              required
+            <ContactInfo
+              icon={<FaPhone className="text-blue-600" />}
+              label="Phone"
+              value="+94 766420749"
+              link="tel:+94766420749"
             />
+            <ContactInfo
+              icon={<FaMapMarkerAlt className="text-blue-600" />}
+              label="Address"
+              value="574, Enderamulla, Wattala"
+            />
+          </section>
 
-            <button
-              type="submit"
-              className="w-full px-4 py-2 rounded-md bg-primary text-white font-semibold hover:bg-primary/90 transition"
-            >
-              {status === 'loading'
-                ? 'Sending...'
-                : status === 'success'
-                ? 'Message Sent ✅'
-                : status === 'error'
-                ? 'Error! Try Again'
-                : 'Send Message'}
-            </button>
-          </form>
+          {/* Contact Form */}
+          <section className="mt-8">
+            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+              <FormField
+                label="Name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <FormField
+                label="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                required
+              />
+              <FormField
+                label="Message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                textarea
+                rows={5}
+                required
+              />
+
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className={`w-full py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition-shadow duration-300 shadow-md ${
+                  status === 'loading' ? 'opacity-70 cursor-not-allowed' : 'shadow-blue-500/40'
+                }`}
+              >
+                {status === 'loading'
+                  ? 'Sending...'
+                  : status === 'success'
+                  ? 'Message Sent ✅'
+                  : status === 'error'
+                  ? 'Error! Try Again'
+                  : 'Send Message'}
+              </button>
+            </form>
+          </section>
         </div>
       </div>
     </div>
@@ -122,19 +146,21 @@ function ContactInfo({
   link?: string
 }) {
   return (
-    <div className="flex items-start gap-4">
-      <div className="text-xl">{icon}</div>
+    <div className="flex items-center gap-5">
+      <div className="text-2xl flex-shrink-0">{icon}</div>
       <div>
-        <p className="font-medium">{label}:</p>
+        <p className="font-semibold text-gray-900">{label}:</p>
         {link ? (
           <Link
             href={link}
-            className="text-gray-600 dark:text-gray-300 hover:text-primary"
+            className="text-blue-600 hover:underline transition"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {value}
           </Link>
         ) : (
-          <p className="text-gray-600 dark:text-gray-300">{value}</p>
+          <p className="text-gray-700">{value}</p>
         )}
       </div>
     </div>
@@ -161,11 +187,11 @@ function FormField({
   required?: boolean
 }) {
   const baseClasses =
-    'w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:outline-none transition'
+    'w-full px-5 py-3 rounded-xl border border-gray-300 bg-white text-gray-900 placeholder-gray-400 focus:border-blue-600 focus:ring-2 focus:ring-blue-300 outline-none transition'
 
   return (
     <div>
-      <label htmlFor={name} className="block text-sm font-medium mb-2">
+      <label htmlFor={name} className="block text-sm font-medium mb-2 text-gray-900">
         {label}
       </label>
       {textarea ? (
@@ -177,6 +203,7 @@ function FormField({
           value={value}
           onChange={onChange}
           required={required}
+          placeholder={`Enter your ${label.toLowerCase()}`}
         />
       ) : (
         <input
@@ -187,6 +214,8 @@ function FormField({
           value={value}
           onChange={onChange}
           required={required}
+          placeholder={`Enter your ${label.toLowerCase()}`}
+          autoComplete={name === 'email' ? 'email' : undefined}
         />
       )}
     </div>

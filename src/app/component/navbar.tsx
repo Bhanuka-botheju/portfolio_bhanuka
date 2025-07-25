@@ -76,26 +76,7 @@ export default function Navbar() {
         </ul>
 
         {/* Icons & Mobile Toggle */}
-        <div className="flex items-center gap-4">
-          <span className="text-cyan-400">
-            <MoonIcon className="w-5 h-5" />
-          </span>
-          <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden text-gray-300 hover:text-cyan-400"
-            aria-label="Toggle Mobile Menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+        
       </div>
 
       {/* Mobile Dropdown */}
